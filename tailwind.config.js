@@ -7,7 +7,7 @@ module.exports = {
         'poppins': ['"Poppins"', 'sans-serif'],
       },
       backgroundImage: {
-        'hero-pattern': "url('./assets/image/hero.png')",
+        'hero-pattern': "url('../assets/image/hero.png')",
       },
       height:{
         'img-hidden': 566
