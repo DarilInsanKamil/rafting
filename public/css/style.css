@@ -394,6 +394,10 @@ button,
 Make sure disabled buttons don't get the pointer cursor.
 */
 
+.hero-section {
+  background-image: url('../assets/image/hero.png');
+}
+
 :disabled {
   cursor: default;
 }
