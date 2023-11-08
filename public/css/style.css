@@ -394,10 +394,6 @@ button,
 Make sure disabled buttons don't get the pointer cursor.
 */
 
-.hero-section {
-  background-image: url('../assets/image/hero.png');
-}
-
 :disabled {
   cursor: default;
 }
@@ -407,7 +403,9 @@ Make sure disabled buttons don't get the pointer cursor.
 2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
    This can trigger a poorly considered lint error in some tools but is included by design.
 */
-
+.hero-section {
+  background-image: url('../assets/image/hero.png');
+}
 img,
 svg,
 video,
@@ -538,10 +536,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.visible {
-  visibility: visible;
-}
-
 .absolute {
   position: absolute;
 }
@@ -633,9 +627,17 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
+}
+
+.h-img-hidden {
+  height: 566px;
 }
 
 .w-2\/5 {
@@ -653,6 +655,10 @@ video {
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.w-img-hidden {
+  width: 454px;
 }
 
 .cursor-pointer {
@@ -740,8 +746,9 @@ video {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/assets\/image\/hero\.png\'\)\] {
-  background-image: url('/assets/image/hero.png');
+.bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
 .p-2 {

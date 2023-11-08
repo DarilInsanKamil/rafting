@@ -9,6 +9,12 @@ module.exports = {
       backgroundImage: {
         'hero-pattern': "url('./assets/image/hero.png')",
       },
+      height:{
+        'img-hidden': 566
+      },
+      spacing: {
+        'img-hidden': 454
+      }
     },
   },
   plugins: [],
