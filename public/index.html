@@ -16,10 +16,9 @@
     </script>
   </head>
   <body class="font-poppins">
-    <header></header>
     <main>
-      <section class="hero-section bg-hero-pattern px-4 py-2 text-white">
-        <nav class="flex justify-between items-center">
+      <section class="hero-section bg-hero-pattern p-4 text-white">
+        <nav class="flex justify-between items-center relative" id="nav">
           <img
             src="./assets/icon/logo-2.svg"
             class="sm:w-4 md:w-auto"
@@ -31,8 +30,10 @@
             <li class="cursor-pointer">Gallery</li>
             <li class="cursor-pointer">Contact</li>
           </ul>
+          <div class="flex gap-4 items-center">
+
           <button
-            class="bg-blue-400 text-white rounded-full flex items-center gap-2 px-4 py-2"
+            class="bg-blue-400 text-white rounded-full md:flex items-center gap-2 px-4 py-2 hover:bg-blue-500 transition-all hidden"
           >
             <img
               src="./assets/icon/whatsapp.svg"
@@ -43,6 +44,20 @@
             />
             Book Now
           </button>
+          <button onclick="toggleSidebar()" class="md:hidden block">
+            <img src="./assets/icon/menu.svg" width="24" height="24" alt="menu-icon"/>
+          </button>
+          <div class="md:hidden">
+            <div class="bg-white rounded-md absolute end-0 top-12 w-full text-blue-500 transition-all p-4 hidden" id="mobile">
+                <ul class="flex gap-5 flex-col md:hidden">
+                    <li class="cursor-pointer"><a href="#home">Home</a></li>
+                    <li class="cursor-pointer">Price</li>
+                    <li class="cursor-pointer">Gallery</li>
+                    <li class="cursor-pointer">Contact</li>
+                </ul>
+            </div>
+        </div>
+        </div>
         </nav>
 
         <div
@@ -142,8 +157,8 @@
           </p>
         </div>
         <div class="flex justify-between flex-col md:flex-row gap-5 mt-10">
-          <div class="bg-blue-50 p-6 rounded-md delay-[200ms] duration-[400ms] taos:translate-x-[-200px] taos:opacity-0" data-taos-offset="400"">
-            <div class="bg-blue-300 px-4 py-3 w-fit rounded-full">
+          <div class="bg-blue-50 p-6 flex justify-center items-center flex-col rounded-md delay-[200ms] duration-[400ms] taos:translate-x-[-200px] taos:opacity-0" data-taos-offset="200"">
+            <div class="bg-blue-300 px-4 py-3 w-fit rounded-full ">
               <img
                 src="./assets/icon/safety.svg"
                 width="28"
@@ -159,7 +174,7 @@
               </p>
             </div>
           </div>
-          <div class="bg-blue-50 p-6 rounded-md delay-[200ms] duration-[400ms] taos:translate-x-[-200px] taos:opacity-0" data-taos-offset="400"">
+          <div class="bg-blue-50 p-6 flex justify-center items-center flex-col  rounded-md delay-[200ms] duration-[400ms] taos:translate-x-[-200px] taos:opacity-0" data-taos-offset="200"">
             <div class="bg-blue-300 p-4 w-fit rounded-full">
               <img
                 src="./assets/icon/service.svg"
@@ -176,7 +191,7 @@
               </p>
             </div>
           </div>
-          <div class="bg-blue-50 p-6 rounded-md delay-[200ms] duration-[400ms] taos:translate-x-[-200px] taos:opacity-0" data-taos-offset="400"">
+          <div class="bg-blue-50 p-6 flex justify-center items-center flex-col rounded-md delay-[200ms] duration-[400ms] taos:translate-x-[-200px] taos:opacity-0" data-taos-offset="200"">
             <div class="bg-blue-300 p-4 w-fit rounded-full">
               <img
                 src="./assets/icon/fasilitas.svg"
@@ -368,7 +383,7 @@
           <p>Pengalaman pengunjung yang sudah mencoba</p>
         </div>
         <div class="flex gap-5 items-center md:flex-row flex-col">
-          <div class="bg-blue-50 rounded-md p-4 delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400"">
+          <div class="bg-blue-50 rounded-md p-4 delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200"">
             <div class="flex justify-between items-center">
               <div class="flex gap-1 items-center mb-2">
                 <img
@@ -391,7 +406,7 @@
               juga, terus tempatnya seru krunya ramah-ramah
             </p>
           </div>
-          <div class="bg-blue-50 rounded-md p-4 delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400"">
+          <div class="bg-blue-50 rounded-md p-4 delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200"">
             <div class="flex justify-between items-center">
               <div class="flex gap-1 items-center mb-2">
                 <img
@@ -414,7 +429,7 @@
               juga, terus tempatnya seru krunya ramah-ramah
             </p>
           </div>
-          <div class="bg-blue-50 rounded-md p-4 delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400"">
+          <div class="bg-blue-50 rounded-md p-4 delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200"">
             <div class="flex justify-between items-center">
               <div class="flex gap-1 items-center mb-2">
                 <img
@@ -448,12 +463,12 @@
           id="gallery-section"
           class="grid md:grid-cols-3 sm:grid-cols-1 gap-5"
         >
-          <img src="./assets/image/rafting-1.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400""/>
-          <img src="./assets/image/rafting-1.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400""/>
-          <img src="./assets/image/rafting-1.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400""/>
-          <img src="./assets/image/rafting-2.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400""/>
-          <img src="./assets/image/rafting-2.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400""/>
-          <img src="./assets/image/rafting-2.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="400""/>
+          <img src="./assets/image/rafting-1.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200""/>
+          <img src="./assets/image/rafting-1.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200""/>
+          <img src="./assets/image/rafting-1.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200""/>
+          <img src="./assets/image/rafting-2.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200""/>
+          <img src="./assets/image/rafting-2.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200""/>
+          <img src="./assets/image/rafting-2.png" alt="raftin-1" class="delay-[200ms] duration-[400ms] taos:scale-[0.6] taos:opacity-0" data-taos-offset="200""/>
         </div>
       </section>
     </main>
